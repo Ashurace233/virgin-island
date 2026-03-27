@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ad Virgin Island Resort</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Ad Virgin Island Resort</a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book-room.html">Book a Room</a></li>
+                <li class="dropdown">
+                    <a href="eat-drink.html">Eat & Drink</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eat-drink.html#menus">Menus</a></li>
+                        <li><a href="eat-drink.html#online-orders">Online Orders</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="book.html" class="nav-cta">Book Online</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gift-card.html">Gift Card</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-overlay"></div>
+            <img src="assets/pool-area.png" alt="Ad Virgin Island Resort" class="page-hero-bg">
+            <div class="container page-hero-content">
+                <h1>Contact Us</h1>
+                <p>Get in touch with our team</p>
+            </div>
+        </section>
+
+        <section class="contact section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <span class="contact-label">Mail</span>
+                        <a href="mailto:info@advirginislandresort.com">info@advirginislandresort.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+233205381295">+233 20 538 1295</a>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-label">Location</span>
+                        <address>Island #12, Ada Foah, Greater Accra Region, Ghana</address>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form-section section section-alt">
+            <div class="container">
+                <h2 class="section-title">Send a Message</h2>
+                <p class="section-subtitle" id="form-description">Have a question, need information, or want to place an order? Send us a message and we will respond as soon as possible.</p>
+                <form class="form" id="contact-form" action="https://formsubmit.co/info@advirginislandresort.com" method="POST">
+                    <input type="hidden" name="_subject" value="Ad Virgin Island Resort - Contact Form">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="">
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="text" name="_honey" style="display:none">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-name">Full Name *</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-phone">Phone</label>
+                            <input type="tel" id="contact-phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" placeholder="General inquiry, food order, event planning...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">Message *</label>
+                        <textarea id="contact-message" name="message" rows="5" required placeholder="Include details for food orders: items, quantity, preferred time, delivery location (poolside/garden)."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Ad Virgin Island Resort</p>
+                <p class="footer-location">Ada Foah, Ghana</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="YouTube">YouTube</a>
+                    <a href="#" aria-label="TikTok">TikTok</a>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 Ad Virgin Island Resort</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('contact-form');
+            var params = new URLSearchParams(window.location.search);
+            var order = params.get('order');
+            var inquiry = params.get('inquiry');
+
+            if (order === 'food') {
+                form.querySelector('input[name="_subject"]').value = 'Ad Virgin Island Resort - Food Order';
+                document.getElementById('contact-subject').value = 'Food Order';
+                document.getElementById('contact-message').placeholder = 'Please list your order: items, quantity, preferred time for delivery, and location (poolside or garden).';
+                document.getElementById('form-description').textContent = 'Place your food order for poolside delivery or garden dining. Include your items, quantity, preferred time, and delivery location.';
+            } else if (inquiry === 'event') {
+                form.querySelector('input[name="_subject"]').value = 'Ad Virgin Island Resort - Event Inquiry';
+                document.getElementById('contact-subject').value = 'Event Planning';
+                document.getElementById('contact-message').placeholder = 'Tell us about your event: type (wedding, corporate, birthday), approximate date, number of guests, and any special requirements.';
+                document.getElementById('form-description').textContent = 'Planning an event at our resort? Share the details and our team will get back to you to make it extraordinary.';
+            } else if (inquiry === 'giftcard') {
+                form.querySelector('input[name="_subject"]').value = 'Ad Virgin Island Resort - Gift Card Inquiry';
+                document.getElementById('contact-subject').value = 'Gift Card';
+                document.getElementById('contact-message').placeholder = 'Tell us the amount or type of gift card you would like, and any recipient details.';
+                document.getElementById('form-description').textContent = 'Interested in purchasing a gift card? Let us know the details and we will assist you.';
+            }
+
+            var path = window.location.pathname.replace(/contact\.html.*$/, '');
+            var baseUrl = (window.location.origin && window.location.origin !== 'null')
+                ? window.location.origin + path
+                : window.location.href.replace(/contact\.html.*$/, '');
+            if (baseUrl && !baseUrl.endsWith('/')) baseUrl += '/';
+            form.querySelector('input[name="_next"]').value = (baseUrl || '') + 'thank-you.html?from=contact';
+
+            form.addEventListener('submit', function() {
+                form.querySelector('input[name="_replyto"]').value = document.getElementById('contact-email').value;
+            });
+            document.getElementById('contact-email').addEventListener('change', function() {
+                form.querySelector('input[name="_replyto"]').value = this.value;
+            });
+        });
+    </script>
+</body>
+</html>

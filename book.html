@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Online | Ad Virgin Island Resort</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Ad Virgin Island Resort</a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book-room.html">Book a Room</a></li>
+                <li class="dropdown">
+                    <a href="eat-drink.html">Eat & Drink</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eat-drink.html#menus">Menus</a></li>
+                        <li><a href="eat-drink.html#online-orders">Online Orders</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="book.html" class="nav-cta">Book Online</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gift-card.html">Gift Card</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-overlay"></div>
+            <img src="assets/resort-aerial.png" alt="Ad Virgin Island Resort" class="page-hero-bg">
+            <div class="container page-hero-content">
+                <h1>Book Your Stay</h1>
+                <p>Reserve your paradise escape at Ad Virgin Island Resort</p>
+            </div>
+        </section>
+
+        <section class="booking-form-section section section-alt">
+            <div class="container">
+                <h2 class="section-title">Reservation Request</h2>
+                <p class="section-subtitle">Fill out the form below and our team will confirm your booking and send details to info@advirginislandresort.com</p>
+                <form class="form form-booking" id="booking-form" action="https://formsubmit.co/info@advirginislandresort.com" method="POST">
+                    <input type="hidden" name="_subject" value="Ad Virgin Island Resort - Booking Request">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="">
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="text" name="_honey" style="display:none">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-name">Full Name *</label>
+                            <input type="text" id="book-name" name="Guest Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-email">Email *</label>
+                            <input type="email" id="book-email" name="Email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-phone">Phone *</label>
+                            <input type="tel" id="book-phone" name="Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-guests">Number of Guests *</label>
+                            <select id="book-guests" name="Number of Guests" required>
+                                <option value="">Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7+">7+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="book-checkin">Check-in Date *</label>
+                            <input type="date" id="book-checkin" name="Check-in Date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="book-checkout">Check-out Date *</label>
+                            <input type="date" id="book-checkout" name="Check-out Date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-room">Room Type</label>
+                        <select id="book-room" name="Room Type">
+                            <option value="Premium Suite">Premium Suite</option>
+                            <option value="Island View Room">Island View Room</option>
+                            <option value="Standard Room">Standard Room</option>
+                            <option value="Other">Other (specify in notes)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="book-notes">Special Requests</label>
+                        <textarea id="book-notes" name="Special Requests" rows="4" placeholder="Dietary requirements, accessibility needs, celebrations, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Submit Booking Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Ad Virgin Island Resort</p>
+                <p class="footer-location">Ada Foah, Ghana</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="YouTube">YouTube</a>
+                    <a href="#" aria-label="TikTok">TikTok</a>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 Ad Virgin Island Resort</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('booking-form');
+            var path = window.location.pathname.replace(/book\.html.*$/, '');
+            var baseUrl = (window.location.origin && window.location.origin !== 'null')
+                ? window.location.origin + path
+                : window.location.href.replace(/book\.html.*$/, '');
+            if (baseUrl && !baseUrl.endsWith('/')) baseUrl += '/';
+            form.querySelector('input[name="_next"]').value = (baseUrl || '') + 'thank-you.html?from=booking';
+
+            form.addEventListener('submit', function() {
+                form.querySelector('input[name="_replyto"]').value = document.getElementById('book-email').value;
+            });
+
+            var checkin = document.getElementById('book-checkin');
+            var checkout = document.getElementById('book-checkout');
+            checkin.addEventListener('change', function() {
+                checkout.min = this.value;
+            });
+        });
+    </script>
+</body>
+</html>

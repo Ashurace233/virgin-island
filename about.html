@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Ad Virgin Island Resort</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Ad Virgin Island Resort</a>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book-room.html">Book a Room</a></li>
+                <li class="dropdown">
+                    <a href="eat-drink.html">Eat & Drink</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="eat-drink.html#menus">Menus</a></li>
+                        <li><a href="eat-drink.html#online-orders">Online Orders</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="book.html" class="nav-cta">Book Online</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gift-card.html">Gift Card</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-overlay"></div>
+            <img src="assets/resort-aerial.png" alt="Ad Virgin Island Resort" class="page-hero-bg">
+            <div class="container page-hero-content">
+                <h1>About Us</h1>
+                <p>Welcome to Virgin Island Resort</p>
+            </div>
+        </section>
+
+        <section class="welcome section">
+            <div class="container">
+                <h2 class="section-title">A Tropical Paradise</h2>
+                <p class="welcome-text">
+                    A tropical paradise that offers an unforgettable getaway. Nestled among pristine beaches and crystal-clear waters, our resort provides luxurious accommodations, world-class dining, and a variety of adventure activities.
+                </p>
+                <p class="welcome-text">
+                    Whether you're looking to relax by the pool, explore vibrant marine life, or indulge in rejuvenating spa treatments, Virgin Island Resort has something for everyone. Discover the beauty and serenity of our island oasis and create lasting memories with us.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-form-section section section-alt">
+            <div class="container">
+                <h2 class="section-title">Send Us a Message</h2>
+                <p class="section-subtitle">Have a question or want to learn more? Send a message and we will get back to you.</p>
+                <form class="form" action="https://formsubmit.co/info@advirginislandresort.com" method="POST">
+                    <input type="hidden" name="_subject" value="Ad Virgin Island Resort - Website Inquiry">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="">
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="text" name="_honey" style="display:none">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="about-name">Full Name *</label>
+                            <input type="text" id="about-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="about-email">Email *</label>
+                            <input type="email" id="about-email" name="email" required>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_replyto" value="">
+                    <div class="form-group">
+                        <label for="about-subject">Subject</label>
+                        <input type="text" id="about-subject" name="subject" placeholder="How can we help?">
+                    </div>
+                    <div class="form-group">
+                        <label for="about-message">Message *</label>
+                        <textarea id="about-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-brand">Ad Virgin Island Resort</p>
+                <p class="footer-location">Ada Foah, Ghana</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="YouTube">YouTube</a>
+                    <a href="#" aria-label="TikTok">TikTok</a>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2025 Ad Virgin Island Resort</p>
+        </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.querySelector('.contact-form-section form');
+            var nextInput = form.querySelector('input[name="_next"]');
+            var path = window.location.pathname.replace(/about\.html.*$/, '');
+            var baseUrl = (window.location.origin && window.location.origin !== 'null')
+                ? window.location.origin + path
+                : window.location.href.replace(/about\.html.*$/, '');
+            if (!baseUrl.endsWith('/')) baseUrl += '/';
+            nextInput.value = baseUrl + 'thank-you.html?from=about';
+
+            form.addEventListener('submit', function() {
+                form.querySelector('input[name="_replyto"]').value = document.getElementById('about-email').value;
+            });
+            document.getElementById('about-email').addEventListener('change', function() {
+                form.querySelector('input[name="_replyto"]').value = this.value;
+            });
+        });
+    </script>
+</body>
+</html>
