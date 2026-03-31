@@ -32,7 +32,6 @@
                 <li><a href="book.html" class="nav-cta">Book Online</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="gift-card.html">Gift Card</a></li>
             </ul>
         </nav>
     </header>
@@ -142,11 +141,6 @@
                 document.getElementById('contact-subject').value = 'Event Planning';
                 document.getElementById('contact-message').placeholder = 'Tell us about your event: type (wedding, corporate, birthday), approximate date, number of guests, and any special requirements.';
                 document.getElementById('form-description').textContent = 'Planning an event at our resort? Share the details and our team will get back to you to make it extraordinary.';
-            } else if (inquiry === 'giftcard') {
-                form.querySelector('input[name="_subject"]').value = 'Ad Virgin Island Resort - Gift Card Inquiry';
-                document.getElementById('contact-subject').value = 'Gift Card';
-                document.getElementById('contact-message').placeholder = 'Tell us the amount or type of gift card you would like, and any recipient details.';
-                document.getElementById('form-description').textContent = 'Interested in purchasing a gift card? Let us know the details and we will assist you.';
             }
 
             var path = window.location.pathname.replace(/contact\.html.*$/, '');
