@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #0d9488;
+  --color-primary-dark: #0b766d;
+  --color-accent-gold: #e3b04b;
+  --color-accent-blue: #1e3a8a;
+  --color-accent-blue-light: #60a5fa;
+  --color-white: #ffffff;
+  --color-off-white: #f8f8f8;
+  --color-marble: #e8e8e8;
+  --color-charcoal: #3c3c3c;
+  --color-charcoal-dark: #1a1a1a;
+  --color-text: #333333;
+  --color-text-light: #5a5a5a;
+  --font-display: var(--font-display-fallback);
+  --font-body: var(--font-body-fallback);
+}
+
+@theme inline {
+  --font-sans: var(--font-body-fallback);
+  --color-virgin-teal: var(--color-primary);
+  --color-virgin-teal-dark: var(--color-primary-dark);
+  --color-virgin-gold: var(--color-accent-gold);
+  --color-virgin-blue: var(--color-accent-blue);
+  --color-virgin-charcoal: var(--color-charcoal);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body-fallback), ui-sans-serif, system-ui, sans-serif;
+  color: var(--color-text);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+}

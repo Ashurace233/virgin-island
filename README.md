@@ -1,40 +1,36 @@
-# Ad Virgin Island Resort Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A professional, fully functional resort website with individual pages and working forms.
+## Getting Started
 
-## Form Setup (Important)
+First, run the development server:
 
-All forms send to **info@advirginislandresort.com** via FormSubmit.co.
-
-**First-time activation:** When someone submits a form for the first time, FormSubmit sends a confirmation email to info@advirginislandresort.com. The resort must click the activation link in that email. After activation, all form submissions (contact messages, booking requests) will be delivered to that inbox.
-
-## Deployment
-
-For forms to work correctly, the site must be hosted on a web server (not opened as file://). Deploy to any static host (Netlify, Vercel, GitHub Pages, or your own server).
-
-If using a custom domain, update the `_next` redirect URLs in the form scripts to match your domain so users are redirected to your thank-you page after submitting.
-
-## Pages
-
-- **index.html** - Home
-- **book-room.html** - Accommodations
-- **eat-drink.html** - Food & Drinks, Menus, Online Orders
-- **events.html** - Events
-- **book.html** - Booking form (sends to resort email)
-- **about.html** - About + message form (sends to resort email)
-- **contact.html** - Contact + message form (sends to resort email). Handles: general inquiries, food orders (?order=food), event planning (?inquiry=event)
-- **thank-you.html** - Post-submission confirmation
-
-## Local Testing
-
-Run a local server to test forms (required for form submission):
-
-```
-# Python
-python -m http.server 8000
-
-# Node (npx)
-npx serve
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Then open http://localhost:8000
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
